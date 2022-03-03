@@ -1,14 +1,13 @@
 import Image from 'next/image'
 
-import searchIcon from '@icons/search.svg'
+import SearchIcon from './SearchIcon'
+
 import closeIcon from '@icons/close.svg'
 
 const Search: React.FC = () => {
   return (
     <section className="flex w-80 items-center rounded-3xl bg-background py-3 px-6">
-      <div className="h-4 w-4">
-        <Image src={searchIcon} layout="responsive" />
-      </div>
+      <SearchIcon width={16} height={16} color="fill-gray" />
       <input
         type="text"
         placeholder="Search in Web3Block"
