@@ -17,7 +17,11 @@ const Search: React.FC = () => {
   return (
     <label className="relative block" tabIndex={0} ref={inputRef}>
       <span className="absolute inset-y-0 left-0 flex items-center pl-6">
-        <SearchIcon width={16} height={16} styles="fill-gray" />
+        <SearchIcon
+          width={16}
+          height={16}
+          styles={input ? 'fill-sea' : 'fill-gray'}
+        />
       </span>
       <input
         type="text"
