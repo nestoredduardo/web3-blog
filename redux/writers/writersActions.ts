@@ -23,4 +23,4 @@ const getWriters =
     }
   }
 
-export default getWriters
+export { getWriters }
