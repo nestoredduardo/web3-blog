@@ -3,9 +3,11 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import writerReducer from './writers/writerReducer'
+import searchReducer from './search/searchReducer'
 
 const rootReducer = combineReducers({
   writers: writerReducer,
+  search: searchReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
