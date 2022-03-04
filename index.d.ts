@@ -21,3 +21,10 @@ type WritersState = {
   nextPage: number
   limit: number
 }
+
+type SearchState = {
+  results: WriterPreview[]
+  loading: boolean
+  notfound: boolean
+  error: boolean
+}
