@@ -2,6 +2,7 @@ export enum ActionType {
   GET_RESULTS = 'GET_RESULTS',
   GET_RESULTS_SUCCESS = 'GET_RESULTS_SUCCESS',
   GET_RESULTS_ERROR = 'GET_RESULTS_ERROR',
+  END_SEARCH = 'END_SEARCH',
 }
 
 interface actionGet {
@@ -17,4 +18,8 @@ interface actionError {
   type: ActionType.GET_RESULTS_ERROR
 }
 
-export type Action = actionGet | actionSuccess | actionError
+interface actionEnd {
+  type: ActionType.END_SEARCH
+}
+
+export type Action = actionGet | actionSuccess | actionError | actionEnd

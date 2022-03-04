@@ -21,6 +21,8 @@ const reducer = (
         loading: false,
         notfound: !action.payload && true,
       }
+    case ActionType.END_SEARCH:
+      return { ...state, results: [] }
     case ActionType.GET_RESULTS_ERROR:
       return { ...state, loading: false, error: true }
     default:
