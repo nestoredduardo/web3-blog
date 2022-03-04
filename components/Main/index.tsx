@@ -1,6 +1,6 @@
 import Search from './Search'
 import Title from './Title'
-import WritersList from './WritersList'
+import WritersList from './Writters'
 
 const Main: React.FC = () => {
   return (
