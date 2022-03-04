@@ -10,11 +10,18 @@ const handleSearch = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const allWriters = await getAllWriters()
 
-    const result = allWriters.filter(
-      (writer) =>
-        writer.firstName.includes(newInput) ||
-        writer.lastName.includes(newInput)
-    )
+    const result = allWriters.filter((writer) => {
+      const firstName = writer.firstName.toLowerCase()
+      const lastName = writer.lastName.toLowerCase()
+      console.log(newInput)
+
+      return (
+        firstName.includes(newInput) ||
+        firstName == newInput ||
+        lastName.includes(newInput) ||
+        lastName == newInput
+      )
+    })
 
     res.status(200).json({ ...result })
   } catch (error) {

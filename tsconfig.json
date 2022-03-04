@@ -21,6 +21,7 @@
       "@icons/*": ["public/icon/*"],
       "@store": ["redux/store.ts"],
       "@writersActions": ["redux/writers/writersActions.ts"],
+      "@searchActions": ["redux/search/searchActions.ts"],
       "@utils": ["utils/index.ts"]
     }
   },
