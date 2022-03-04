@@ -10,10 +10,16 @@ const getWriters =
     try {
       const { nextPage } = getState().writers
       const response = await fetch(`/api/fetchWriters?page=${nextPage}`)
-      const data = await response.json()
-      console.log(data)
+      const data: ListResponse = await response.json()
+
+      dispatch({
+        type: ActionType.GET_WRITERS_SUCCESS,
+        payload: { data: data.data, total: data.total },
+      })
     } catch (error) {
-      console.log(error)
+      dispatch({
+        type: ActionType.GET_WRITERS_ERROR,
+      })
     }
   }
 
