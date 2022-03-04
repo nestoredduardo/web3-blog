@@ -2,10 +2,10 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import nftsReducer from './writers/writerReducer'
+import writerReducer from './writers/writerReducer'
 
 const rootReducer = combineReducers({
-  nfts: nftsReducer,
+  writers: writerReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
