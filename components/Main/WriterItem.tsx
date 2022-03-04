@@ -6,7 +6,7 @@ type WriterItemProps = {
 
 const WriterItem: React.FC<WriterItemProps> = ({ writer }) => {
   return (
-    <li className="flex w-80 items-center rounded-xl border-2 border-gray-light py-4 px-6">
+    <li className="my-2 flex w-80 items-center rounded-xl border-2 border-gray-light py-4 px-6">
       <div className="mr-4 h-11 w-11">
         <img src={writer.picture} className="rounded-full" />
       </div>
