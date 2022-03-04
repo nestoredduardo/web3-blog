@@ -1,4 +1,4 @@
-import { Action, ActionType } from './writersType'
+import { Action, ActionType } from './writersTypes'
 
 const initialState: WritersState = {
   list: [],

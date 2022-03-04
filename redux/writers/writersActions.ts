@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { ActionType, Action } from './writersType'
+import { ActionType, Action } from './writersTypes'
 import { RootState } from 'redux/store'
 
 const getWriters =
