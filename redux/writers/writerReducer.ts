@@ -1,10 +1,4 @@
-import { PayloadAction } from '@reduxjs/toolkit'
-
-import {
-  GET_WRITERS,
-  GET_WRITERS_SUCCESS,
-  GET_WRITERS_ERROR,
-} from './writersType'
+import { Action, ActionType } from './writersType'
 
 const initialState: WritersState = {
   list: [],
@@ -15,8 +9,23 @@ const initialState: WritersState = {
   limit: 10,
 }
 
-const reducer = (state = initialState, action: PayloadAction) => {
+const reducer = (
+  state: WritersState = initialState,
+  action: Action
+): WritersState => {
   switch (action.type) {
+    case ActionType.GET_WRITERS:
+      return { ...state, loading: true }
+    case ActionType.GET_WRITERS_SUCCESS:
+      return {
+        ...state,
+        list: state.list.concat(action.payload.data),
+        loading: false,
+        total: action.payload.total,
+        nextPage: state.nextPage + 1,
+      }
+    case ActionType.GET_WRITERS_ERROR:
+      return { ...state, loading: false, error: true }
     default:
       return state
   }
