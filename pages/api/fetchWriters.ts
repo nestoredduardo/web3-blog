@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const fetchWriters = async (page: string): Promise<ListResponse> => {
+const fetchWriters = async (
+  page: string,
+  limit: string
+): Promise<ListResponse> => {
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     'app-id': process.env.APP_ID!,
@@ -12,7 +15,7 @@ const fetchWriters = async (page: string): Promise<ListResponse> => {
   }
 
   const response = await fetch(
-    `${process.env.API_URI}user?page=${page}&limit=10`,
+    `${process.env.API_URI}user?page=${page}&limit=${limit}`,
     requestOptions
   )
   const data = await response.json()
@@ -24,9 +27,9 @@ const handleFetchWriters = async (
   res: NextApiResponse
 ) => {
   try {
-    const { page } = req.query
+    const { page, limit } = req.query
 
-    const data = await fetchWriters(page as string)
+    const data = await fetchWriters(page as string, limit as string)
 
     res.status(200).json({ ...data })
   } catch (error) {
