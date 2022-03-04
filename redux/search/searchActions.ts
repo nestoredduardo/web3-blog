@@ -11,7 +11,10 @@ const search =
     try {
       const response = await fetch(`/api/search?input=${input}`)
       const data: WriterPreview[] = await response.json()
-      console.log(data)
+      dispatch({
+        type: ActionType.GET_RESULTS_SUCCESS,
+        payload: data,
+      })
     } catch (error) {
       dispatch({
         type: ActionType.GET_RESULTS_ERROR,

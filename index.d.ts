@@ -25,6 +25,5 @@ type WritersState = {
 type SearchState = {
   results: WriterPreview[]
   loading: boolean
-  notfound: boolean
   error: boolean
 }
