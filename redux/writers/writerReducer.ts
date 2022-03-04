@@ -6,11 +6,13 @@ import {
   GET_WRITERS_ERROR,
 } from './writersType'
 
-const initialState = {
+const initialState: WritersState = {
+  list: [],
   loading: false,
   error: false,
-  page: 0,
-  list: [],
+  total: null,
+  nextPage: 0,
+  limit: 10,
 }
 
 const reducer = (state = initialState, action: PayloadAction) => {
