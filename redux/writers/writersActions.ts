@@ -9,7 +9,8 @@ const getWriters =
     })
     try {
       const { nextPage } = getState().writers
-      const data = await fetch(`/api/fetchWriters?page=${nextPage}`)
+      const response = await fetch(`/api/fetchWriters?page=${nextPage}`)
+      const data = await response.json()
       console.log(data)
     } catch (error) {
       console.log(error)
