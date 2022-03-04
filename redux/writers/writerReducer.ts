@@ -15,7 +15,7 @@ const reducer = (
 ): WritersState => {
   switch (action.type) {
     case ActionType.GET_WRITERS:
-      return { ...state, loading: true }
+      return { ...state, loading: true, error: false }
     case ActionType.GET_WRITERS_SUCCESS:
       return {
         ...state,
