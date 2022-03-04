@@ -20,7 +20,8 @@
       "@images/*": ["public/img/*"],
       "@icons/*": ["public/icon/*"],
       "@store": ["redux/store.ts"],
-      "@writersActions": ["redux/writers/writersActions.ts"]
+      "@writersActions": ["redux/writers/writersActions.ts"],
+      "@utils": ["utils/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
