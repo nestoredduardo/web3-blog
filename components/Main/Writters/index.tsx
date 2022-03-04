@@ -6,6 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import { getWriters } from '@writersActions'
 
 import WriterItem from './WriterItem'
+import Loading from '../Loading'
 
 const WritersList: React.FC<PropsFromRedux> = ({
   getWriters,
@@ -32,7 +33,7 @@ const WritersList: React.FC<PropsFromRedux> = ({
           dataLength={writersList.length}
           next={handleNext}
           hasMore={hasMore}
-          loader={<h4>Loading</h4>}
+          loader={<Loading />}
         >
           {writersList.map((writer) => {
             return <WriterItem key={writer.id} writer={writer} />
