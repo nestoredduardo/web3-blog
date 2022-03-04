@@ -1,3 +1,10 @@
+type ListResponse = {
+  data: WriterPreview[]
+  total: number
+  page: number
+  limit: number
+}
+
 type WriterPreview = {
   id: string
   title: string
