@@ -9,7 +9,9 @@ const getWriters =
     })
     try {
       const { nextPage } = getState().writers
-      const response = await fetch(`/api/fetchWriters?page=${nextPage}`)
+      const response = await fetch(
+        `/api/fetchWriters?page=${nextPage}&limit=10`
+      )
       const data: ListResponse = await response.json()
 
       dispatch({
