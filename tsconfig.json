@@ -18,7 +18,9 @@
     "paths": {
       "@components/*": ["components/*"],
       "@images/*": ["public/img/*"],
-      "@icons/*": ["public/icon/*"]
+      "@icons/*": ["public/icon/*"],
+      "@store": ["redux/store.ts"],
+      "@writersActions": ["redux/writers/writersActions.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
