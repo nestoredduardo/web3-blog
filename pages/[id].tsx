@@ -35,7 +35,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const ProfilePage = ({ writer, postPreviewResponse }: WritersResponse) => {
-  console.log(writer, postPreviewResponse)
   return (
     <>
       <Head>
