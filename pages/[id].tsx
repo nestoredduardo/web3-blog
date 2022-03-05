@@ -1,36 +1,49 @@
-import type { GetServerSideProps } from 'next'
+import Profile from '@components/ProfilePage'
+import type { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
-
-import Header from '@components/Header'
 
 type WritersResponse = {
   writer: Writer
-  postPreviewList: PostPreview[]
+  postPreviewResponse: ListResponse
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const response = await fetch(`${process.env.SERVER_URL}api/writers`)
+  const writersList: WriterPreview[] = await response.json()
+
+  const paths = writersList.map((writer) => ({ params: { id: writer.id } }))
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params!
   const response = await fetch(`${process.env.SERVER_URL}api/writers/${id}`)
   const data: WritersResponse = await response.json()
 
-  const { writer, postPreviewList } = data
+  const { writer, postPreviewResponse } = data
 
   return {
     props: {
       writer: writer || null,
-      postPreviewList,
+      postPreviewResponse,
     },
   }
 }
 
-const ProfilePage = ({ writer, postPreviewList }: WritersResponse) => {
-  console.log(writer, postPreviewList)
+const ProfilePage = ({ writer, postPreviewResponse }: WritersResponse) => {
+  console.log(writer, postPreviewResponse)
   return (
     <>
       <Head>
         <title>Web3Blogs</title>
         <link rel="icon" href="/img/logo.svg" />
       </Head>
+
+      <Profile writer={writer} postPreviewResponse={postPreviewResponse} />
     </>
   )
 }

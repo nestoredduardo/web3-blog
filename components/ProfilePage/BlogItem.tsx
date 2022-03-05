@@ -1,12 +1,16 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import { formatName } from '@utils';
+import { formatName } from '@utils'
 
-const BlogItem: React.FC = ({ postPreview: PostPreview }) => {
+type BlogItemProps = {
+  postPreview: PostPreview
+}
+
+const BlogItem: React.FC<BlogItemProps> = ({ postPreview }) => {
   return (
-    <article>
+    <article className="bg-red-500">
       <div>
-        <div>
+        <div className="relative h-5 w-5">
           <Image src={postPreview.owner.picture} layout="fill" />
         </div>
         <div>
@@ -23,7 +27,7 @@ const BlogItem: React.FC = ({ postPreview: PostPreview }) => {
       <h3>{postPreview.text}</h3>
       <div></div>
     </article>
-  );
-};
+  )
+}
 
-export default BlogItem;
+export default BlogItem
