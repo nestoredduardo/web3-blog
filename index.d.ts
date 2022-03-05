@@ -16,10 +16,10 @@ type Writer = {
   registerDate: string
   phone: string
   picture: string
-  location: Location
+  location: WriterLocation
 }
 
-type Location = {
+type WriterLocation = {
   street: string
   city: string
   state: string
@@ -42,7 +42,7 @@ type PostPreview = {
   likes: number
   tags: string[]
   publishDate: string
-  owner: object
+  owner: WriterPreview
 }
 
 type WritersState = {
