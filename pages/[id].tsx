@@ -10,7 +10,7 @@ type WritersResponse = {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.params!
-  const response = await fetch(`/api/writers/${id}`)
+  const response = await fetch(`${process.env.SERVER_URL}api/writers/${id}`)
   const data: WritersResponse = await response.json()
 
   const { writer, postPreviewList } = data
