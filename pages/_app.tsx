@@ -6,12 +6,16 @@ import type { AppProps } from 'next/app'
 import generateStore from '@store'
 import { Provider } from 'react-redux'
 
+import Layout from '@components/Layout'
+
 const store = generateStore()
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   )
 }

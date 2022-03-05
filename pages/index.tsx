@@ -6,15 +6,14 @@ import Main from '@components/Main'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col">
+    <>
       <Head>
         <title>Web3Blogs</title>
         <link rel="icon" href="/img/logo.svg" />
       </Head>
 
-      <Header />
       <Main />
-    </div>
+    </>
   )
 }
 
