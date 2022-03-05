@@ -22,13 +22,13 @@ const fetchWriters = async (
 
 const getAllWriters = async (): Promise<WriterPreview[]> => {
   const firstBatch = await fetchWriters('0', '50')
-  let allWriters = firstBatch.data
+  let allWriters = firstBatch.data as WriterPreview[]
   let total = firstBatch.total
 
   if (allWriters.length < total) {
     const nextPage = firstBatch.page + 1
     const batch = await fetchWriters(nextPage.toString(), '50')
-    allWriters.concat(batch.data)
+    allWriters.concat(batch.data as WriterPreview[])
     total = batch.total
   }
 
