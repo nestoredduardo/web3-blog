@@ -7,9 +7,9 @@ const handleWriterId = async (req: NextApiRequest, res: NextApiResponse) => {
     const { id } = req.query
 
     const writer = await getWriter(id as string)
-    const postPreviewList = await getPost(id as string)
+    const postPreviewResponse = await getPost(id as string)
 
-    res.status(200).json({ writer, postPreviewList })
+    res.status(200).json({ writer, postPreviewResponse })
   } catch (error) {
     res.status(404).json({ message: 'RIP Server' })
   }
