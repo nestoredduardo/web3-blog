@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import { getWriters } from '@writersActions'
 
 import WriterItem from './WriterItem'
-import Loading from '../Loading'
+import Loading from './Loading'
 
 const WritersList: React.FC<PropsFromRedux> = ({
   getWriters,

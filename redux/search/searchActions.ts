@@ -10,10 +10,10 @@ const search =
     })
     try {
       const response = await fetch(`/api/search?input=${input}`)
-      const data: WriterPreview[] = await response.json()
+      const data: { result: WriterPreview[] } = await response.json()
       dispatch({
         type: ActionType.GET_RESULTS_SUCCESS,
-        payload: data,
+        payload: data.result,
       })
     } catch (error) {
       dispatch({

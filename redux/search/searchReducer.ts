@@ -12,7 +12,7 @@ const reducer = (
 ): SearchState => {
   switch (action.type) {
     case ActionType.GET_RESULTS:
-      return { ...state, loading: true }
+      return { ...state, results: [], loading: true }
     case ActionType.GET_RESULTS_SUCCESS:
       return {
         ...state,

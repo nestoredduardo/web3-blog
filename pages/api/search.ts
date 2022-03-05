@@ -13,7 +13,6 @@ const handleSearch = async (req: NextApiRequest, res: NextApiResponse) => {
     const result = allWriters.filter((writer) => {
       const firstName = writer.firstName.toLowerCase()
       const lastName = writer.lastName.toLowerCase()
-      console.log(newInput)
 
       return (
         firstName.includes(newInput) ||
@@ -23,7 +22,7 @@ const handleSearch = async (req: NextApiRequest, res: NextApiResponse) => {
       )
     })
 
-    res.status(200).json({ ...result })
+    res.status(200).json({ result })
   } catch (error) {
     res.status(404).json({ message: 'RIP Server' })
   }
