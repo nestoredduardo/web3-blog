@@ -1,17 +1,17 @@
+const headers: HeadersInit = {
+  'Content-Type': 'application/json',
+  'app-id': process.env.APP_ID!,
+}
+
+const requestOptions: RequestInit = {
+  method: 'GET',
+  headers,
+}
+
 const fetchWriters = async (
   page: string,
   limit: string
 ): Promise<ListResponse> => {
-  const headers: HeadersInit = {
-    'Content-Type': 'application/json',
-    'app-id': process.env.APP_ID!,
-  }
-
-  const requestOptions: RequestInit = {
-    method: 'GET',
-    headers,
-  }
-
   const response = await fetch(
     `${process.env.API_URI}user?page=${page}&limit=${limit}`,
     requestOptions
@@ -35,4 +35,22 @@ const getAllWriters = async (): Promise<WriterPreview[]> => {
   return allWriters
 }
 
-export { fetchWriters, getAllWriters }
+const getWriter = async (id: string): Promise<Writer> => {
+  const response = await fetch(
+    `${process.env.API_URI}user/${id}`,
+    requestOptions
+  )
+  const data = await response.json()
+  return data
+}
+
+const getPost = async (id: string): Promise<PostPreview[]> => {
+  const response = await fetch(
+    `${process.env.API_URI}user/${id}/post`,
+    requestOptions
+  )
+  const data = await response.json()
+  return data
+}
+
+export { fetchWriters, getAllWriters, getWriter, getPost }
