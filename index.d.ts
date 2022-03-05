@@ -1,5 +1,5 @@
 type ListResponse = {
-  data: WriterPreview[]
+  data: WriterPreview[] | PostPreview[]
   total: number
   page: number
   limit: number
