@@ -3,19 +3,25 @@ import { connect, ConnectedProps } from 'react-redux'
 import Image from 'next/image'
 import React, { useRef, useState } from 'react'
 
-import { search } from '@searchActions'
+import { search, endSearch } from '@searchActions'
 
 import SearchIcon from './SearchIcon'
 import SearchResults from './SearchResults'
 import closeIcon from '@icons/close.svg'
 
-const Search: React.FC<PropsFromRedux> = ({ search, loading, results }) => {
+const Search: React.FC<PropsFromRedux> = ({
+  search,
+  loading,
+  results,
+  endSearch,
+}) => {
   const inputRef = useRef<HTMLLabelElement | null>(null)
   const [input, setInput] = useState<string>('')
 
   const handleClean = () => {
     setInput('')
     inputRef.current && inputRef.current.focus()
+    endSearch()
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +37,9 @@ const Search: React.FC<PropsFromRedux> = ({ search, loading, results }) => {
 
   return (
     <label className="relative block" ref={inputRef}>
-      {input && <SearchResults loading={loading} results={results} />}
+      {input && (
+        <SearchResults loading={loading} results={results} input={input} />
+      )}
       <span className="absolute inset-y-0 left-0 flex items-center pl-6">
         <SearchIcon
           width={16}
@@ -71,6 +79,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = {
   search,
+  endSearch,
 }
 
 const connector = connect(mapStateToProps, mapDispatchToProps)

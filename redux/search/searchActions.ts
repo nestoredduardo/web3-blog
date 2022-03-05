@@ -22,4 +22,10 @@ const search =
     }
   }
 
-export { search }
+const endSearch = () => (dispatch: Dispatch<Action>) => {
+  dispatch({
+    type: ActionType.END_SEARCH,
+  })
+}
+
+export { search, endSearch }
