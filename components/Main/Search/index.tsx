@@ -32,6 +32,8 @@ const Search: React.FC<PropsFromRedux> = ({
         search(newInput)
       }, 1000)
       return () => clearTimeout(timeoutId)
+    } else if (newInput.length == 1) {
+      endSearch()
     }
   }
 
