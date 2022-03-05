@@ -16,7 +16,7 @@ const getWriters =
 
       dispatch({
         type: ActionType.GET_WRITERS_SUCCESS,
-        payload: { data: data.data, total: data.total },
+        payload: { data: data.data as WriterPreview[], total: data.total },
       })
     } catch (error) {
       dispatch({
