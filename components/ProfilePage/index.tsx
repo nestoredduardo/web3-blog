@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import BlogList from './BlogList'
 import ProfileCard from './ProfileCard'
 
@@ -10,8 +11,13 @@ const Profile: React.FC<WritersResponse> = ({
   writer,
   postPreviewResponse,
 }) => {
+  const [roll, setRoll] = useState(true)
+  useEffect(() => {
+    setTimeout(() => setRoll(false), 1800)
+  }, [])
+
   return (
-    <main>
+    <main className={roll ? 'roll-in' : ''}>
       <ProfileCard writer={writer} />
       <BlogList postPreviewList={postPreviewResponse.data as PostPreview[]} />
     </main>
