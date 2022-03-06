@@ -32,7 +32,7 @@ npm install
 npm run dev
 ```
 
-<p>. Pega la siguiente URL en tu navegador </p>
+<p>5. Pega la siguiente URL en tu navegador </p>
 
 ```
 http://localhost:3000
