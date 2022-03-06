@@ -14,6 +14,10 @@ const WritersList: React.FC<PropsFromRedux> = ({
   total,
 }) => {
   const [hasMore, setHasMore] = useState(true)
+  const [bounce, setBounce] = useState(true)
+  useEffect(() => {
+    setTimeout(() => setBounce(false), 1700)
+  }, [])
 
   const handleNext = async () => {
     await getWriters()
@@ -28,7 +32,7 @@ const WritersList: React.FC<PropsFromRedux> = ({
 
   if (writersList) {
     return (
-      <section className="mt-10">
+      <section className={`${bounce ? 'bounce-in-top' : ''} mt-10`}>
         <InfiniteScroll
           dataLength={writersList.length}
           next={handleNext}

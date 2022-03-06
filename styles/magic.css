@@ -114,16 +114,23 @@
   }
 }
 
-.fade-out-up {
-  animation: fade-out-up 1s ease infinite;
+/* Writers list Bounce In */
+.bounce-in-top {
+  animation: bounce-in-top 2s ease infinite;
 }
-@keyframes fade-out-up {
+@keyframes bounce-in-top {
   0% {
+    opacity: 0;
+    transform: translateY(2000px);
+  }
+  60% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-30px);
+  }
+  80% {
+    transform: translateY(10px);
   }
   100% {
-    opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(0);
   }
 }
