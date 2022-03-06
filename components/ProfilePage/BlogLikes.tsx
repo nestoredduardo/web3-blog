@@ -11,7 +11,7 @@ const BlogLikes: React.FC<{ likes: number }> = ({ likes }) => {
       <div className={'heart ' + (isLiked && 'heart-animation')}></div>
       <p
         className={
-          'whitespace-nowrap text-sm text-gray-dark ' +
+          'whitespace-nowrap text-sm text-gray-dark xl:text-lg ' +
           (isLiked && 'text-red-500')
         }
       >

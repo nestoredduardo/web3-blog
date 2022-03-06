@@ -19,12 +19,16 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({
 }) => {
   return (
     <div className="flex items-center gap-3 text-gray-dark">
-      <div className="relative h-8 w-8">
+      <div className="relative h-8 w-8 xl:h-11 xl:w-11">
         <Image src={picture} layout="fill" className="rounded-full" />
       </div>
       <div className="leading-5">
-        <p className="font-medium">{formatName(title, firstName, lastName)}</p>
-        <p className="text-sm">{formatDate(publishDate, 'blog')}</p>
+        <p className="font-medium xl:text-lg">
+          {formatName(title, firstName, lastName)}
+        </p>
+        <p className="text-sm xl:text-base">
+          {formatDate(publishDate, 'blog')}
+        </p>
       </div>
     </div>
   )

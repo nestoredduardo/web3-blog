@@ -75,6 +75,13 @@
   animation: heart-beat 0.8s steps(28) 1 forwards;
 }
 
+@media screen and (min-width: 1440px) {
+  .heart {
+    height: 80px;
+    width: 80px;
+  }
+}
+
 @keyframes heart-beat {
   from {
     background-position: left;
