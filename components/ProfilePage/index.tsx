@@ -13,13 +13,15 @@ const Profile: React.FC<WritersResponse> = ({
   writer,
   postPreviewResponse,
 }) => {
-  const [roll, setRoll] = useState(true)
+  const [fade, setFade] = useState(true)
   useEffect(() => {
-    setTimeout(() => setRoll(false), 1800)
+    setTimeout(() => setFade(false), 1800)
   }, [])
 
   return (
-    <main className={'bg-background-light ' + (roll && 'roll-in')}>
+    <main
+      className={'bg-background-light ' + (fade && 'animate-fade-in-right')}
+    >
       <ProfileCard writer={writer} />
       <div className="my-6 grid grid-cols-1 md:mx-6 md:grid-cols-3 md:gap-5 lg:mx-auto lg:w-4/5 xl:w-3/4">
         <MoreInfo

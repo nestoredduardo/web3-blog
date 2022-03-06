@@ -63,6 +63,16 @@ module.exports = {
             transform: 'translateX(15px)',
           },
         },
+        'fade-in-right': {
+          '0%': {
+            opacity: 0,
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateX(0px)',
+          },
+        },
         'gradient-animation': {
           '0%': {
             'background-position': '0% 50%',
@@ -78,6 +88,7 @@ module.exports = {
       animation: {
         'bg-animation': 'gradient-animation 2s ease infinite',
         'writer-bounce': 'writer-bounce 1.5s ease infinite',
+        'fade-in-right': 'fade-in-right 2s ease infinite',
       },
     },
   },

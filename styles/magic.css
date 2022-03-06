@@ -71,22 +71,7 @@
   }
 }
 
-/* Profile: Roll In Animation*/
-.roll-in {
-  animation: roll-in 2s ease infinite;
-}
-@keyframes roll-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-/* Search Results: Fade In and out Down */
+/* Search Results: Fade In */
 .fade-in-down {
   animation: fade-in-down 1s ease infinite;
 }
