@@ -14,7 +14,7 @@ const Header: React.FC = () => {
             <Image src={logo} layout="responsive" />
           </div>
           <h1 className="text-lg font-bold lg:text-xl xl:text-2xl">
-            Web3Block
+            Web3Blocks
           </h1>
         </section>
       </Link>

@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Web3Blogs</title>
+        <title>Web3Blocks</title>
         <link rel="icon" href="/img/logo.svg" />
       </Head>
 
