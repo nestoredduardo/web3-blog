@@ -17,7 +17,7 @@ const Profile: React.FC<WritersResponse> = ({
   }, [])
 
   return (
-    <main className={roll ? 'roll-in' : ''}>
+    <main className={'bg-background-light ' + (roll && 'roll-in')}>
       <ProfileCard writer={writer} />
       <BlogList postPreviewList={postPreviewResponse.data as PostPreview[]} />
     </main>
