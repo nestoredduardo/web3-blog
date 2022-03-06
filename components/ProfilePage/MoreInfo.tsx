@@ -29,8 +29,11 @@ const MoreInfo: React.FC<MoreInfoProps> = ({ total, postPreviewList }) => {
           <p className="text-lg">Topics</p>
         </div>
         <ul className="mt-2 flex flex-wrap gap-2 xl:mt-3">
-          {firstTen.map((tag) => (
-            <li className="rounded-lg bg-teal-100 p-1 text-xs text-teal-500 xl:text-sm">
+          {firstTen.map((tag, index) => (
+            <li
+              key={index}
+              className="rounded-lg bg-teal-100 p-1 text-xs text-teal-500 xl:text-sm"
+            >
               {tag}
             </li>
           ))}
