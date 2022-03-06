@@ -52,6 +52,20 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        'gradient-animation': {
+          '0%': {
+            'background-position': '0% 50%',
+          },
+          '50%': {
+            'background-position': '100% 50%',
+          },
+          '100%': {
+            'background-position': '0% 50%',
+          },
+        },
+      },
+      animation: {
+        'bg-animation': 'gradient-animation 2s ease infinite',
       },
     },
   },
