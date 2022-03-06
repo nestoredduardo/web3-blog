@@ -43,26 +43,6 @@
   }
 }
 
-/* WriterItem Hover Bounce */
-.bounce:hover {
-  animation: bounce 1.5s ease infinite;
-}
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateX(0);
-  }
-  40% {
-    transform: translateX(30px);
-  }
-  60% {
-    transform: translateX(15px);
-  }
-}
-
 /* Like Animation */
 .heart {
   background-image: url('/icon/like.png');

@@ -52,6 +52,17 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        'writer-bounce': {
+          '0%, 20%, 50%, 80%, 100% ': {
+            transform: 'translateX(0)',
+          },
+          '40%': {
+            transform: 'translateX(30px)',
+          },
+          '60%': {
+            transform: 'translateX(15px)',
+          },
+        },
         'gradient-animation': {
           '0%': {
             'background-position': '0% 50%',
@@ -66,6 +77,7 @@ module.exports = {
       },
       animation: {
         'bg-animation': 'gradient-animation 2s ease infinite',
+        'writer-bounce': 'writer-bounce 1.5s ease infinite',
       },
     },
   },
