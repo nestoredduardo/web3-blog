@@ -39,7 +39,6 @@ const WritersList: React.FC<PropsFromRedux> = ({
             return <WriterItem key={writer.id} writer={writer} />
           })}
         </InfiniteScroll>
-        <ul className="flex flex-col gap-2"></ul>
       </section>
     )
   }
