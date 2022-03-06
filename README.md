@@ -32,6 +32,12 @@ npm install
 npm run dev
 ```
 
+<p>. Pega la siguiente URL en tu navegador </p>
+
+```
+http://localhost:3000
+```
+
   
   
 <h2>💻 Built with</h2>
