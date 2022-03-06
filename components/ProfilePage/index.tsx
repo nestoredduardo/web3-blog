@@ -21,7 +21,7 @@ const Profile: React.FC<WritersResponse> = ({
   return (
     <main className={'bg-background-light ' + (roll && 'roll-in')}>
       <ProfileCard writer={writer} />
-      <div className="mt-6 grid grid-cols-1 md:mx-6 md:grid-cols-3 md:gap-5 lg:mx-auto lg:w-4/5 xl:w-3/4">
+      <div className="my-6 grid grid-cols-1 md:mx-6 md:grid-cols-3 md:gap-5 lg:mx-auto lg:w-4/5 xl:w-3/4">
         <MoreInfo
           total={postPreviewResponse.total}
           postPreviewList={postPreviewResponse.data as PostPreview[]}
