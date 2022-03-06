@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import Button from '@components/Button'
+
 import { formatName, formatDate } from '@utils'
 
 type ProfileCardProps = {
@@ -37,12 +39,12 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ writer }) => {
           <p className="text-sm text-gray-dark">{writer.location.country}</p>
         </li>
       </ul>
-      <button className="flex items-center rounded-2xl  bg-gradient-to-r from-primary to-secondary px-7 py-3 font-semibold text-white">
+      <Button styles="flex items-center px-7 py-3">
         <div className="relative mr-2 h-5 w-5">
           <Image src="/icon/tip.svg" layout="fill" className="rounded-full" />
         </div>
         Send tip to creator
-      </button>
+      </Button>
     </section>
   )
 }

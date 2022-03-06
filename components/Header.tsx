@@ -1,7 +1,9 @@
 import Image from 'next/image'
+import Link from 'next/link'
+
+import Button from '@components/Button'
 
 import logo from '@images/logo.svg'
-import Link from 'next/link'
 
 const Header: React.FC = () => {
   return (
@@ -14,10 +16,7 @@ const Header: React.FC = () => {
           <h1 className="text-lg font-bold">Web3Block</h1>
         </section>
       </Link>
-
-      <button className="rounded-2xl  bg-gradient-to-r from-primary to-secondary px-7 py-2 font-semibold text-white">
-        Connect Wallet
-      </button>
+      <Button styles="px-7 py-2">Connect Wallet</Button>
     </header>
   )
 }
