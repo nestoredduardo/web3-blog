@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+
 import BlogList from './BlogList'
 import ProfileCard from './ProfileCard'
+import MoreInfo from './MoreInfo'
 
 type WritersResponse = {
   writer: Writer
@@ -19,7 +21,13 @@ const Profile: React.FC<WritersResponse> = ({
   return (
     <main className={'bg-background-light ' + (roll && 'roll-in')}>
       <ProfileCard writer={writer} />
-      <BlogList postPreviewList={postPreviewResponse.data as PostPreview[]} />
+      <div className="mt-6 grid grid-cols-1 md:mx-6 md:grid-cols-3 md:gap-5">
+        <MoreInfo
+          total={postPreviewResponse.total}
+          postPreviewList={postPreviewResponse.data as PostPreview[]}
+        />
+        <BlogList postPreviewList={postPreviewResponse.data as PostPreview[]} />
+      </div>
     </main>
   )
 }

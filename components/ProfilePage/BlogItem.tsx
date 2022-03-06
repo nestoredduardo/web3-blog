@@ -7,7 +7,7 @@ type BlogItemProps = {
 
 const BlogItem: React.FC<BlogItemProps> = ({ postPreview }) => {
   return (
-    <article className="w-80 rounded-xl border-2 border-gray-light bg-white p-5">
+    <article className="w-80 rounded-xl border-2 border-gray-light bg-white p-5 md:w-full">
       <BlogHeader
         {...postPreview.owner}
         publishDate={postPreview.publishDate}
