@@ -6,7 +6,7 @@ type BlogListProps = {
 
 const BlogList: React.FC<BlogListProps> = ({ postPreviewList }) => {
   return (
-    <section>
+    <section className="flex flex-col items-center gap-4 bg-background-light pt-6">
       {postPreviewList.map((postPreview) => {
         return <BlogItem key={postPreview.id} postPreview={postPreview} />
       })}

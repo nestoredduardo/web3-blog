@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
-import { formatName } from '@utils'
+import BlogHeader from './BlogHeader'
+import BlogLikes from './BlogLikes'
 
 type BlogItemProps = {
   postPreview: PostPreview
@@ -8,24 +7,27 @@ type BlogItemProps = {
 
 const BlogItem: React.FC<BlogItemProps> = ({ postPreview }) => {
   return (
-    <article className="bg-red-500">
-      <div>
-        <div className="relative h-5 w-5">
-          <Image src={postPreview.owner.picture} layout="fill" />
+    <article className="w-80 rounded-xl border-2 border-gray-light bg-white p-5">
+      <BlogHeader
+        {...postPreview.owner}
+        publishDate={postPreview.publishDate}
+      />
+      <h3 className="mt-3 text-lg font-medium">{postPreview.text}</h3>
+      <div className="mt-3 flex items-center">
+        <div className="flex w-3/5 flex-wrap gap-1">
+          {postPreview.tags.map((tag, index) => {
+            return (
+              <span
+                key={index}
+                className="rounded-xl bg-secondary-200 py-1 px-2 text-xs text-secondary-500"
+              >
+                {tag}
+              </span>
+            )
+          })}
         </div>
-        <div>
-          <p>
-            {formatName(
-              postPreview.owner.title,
-              postPreview.owner.firstName,
-              postPreview.owner.lastName
-            )}
-          </p>
-          <p>{postPreview.publishDate}</p>
-        </div>
+        <BlogLikes likes={postPreview.likes} />
       </div>
-      <h3>{postPreview.text}</h3>
-      <div></div>
     </article>
   )
 }
