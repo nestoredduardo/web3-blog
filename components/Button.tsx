@@ -6,7 +6,7 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({ children, styles }) => {
   const notify = () => {
-    toast('Comming soon...Little Rockstar 🦄')
+    toast('Coming soon...Little Rockstar 🦄')
   }
 
   return (
