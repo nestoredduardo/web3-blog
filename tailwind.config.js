@@ -94,12 +94,29 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        'bounce-in-top': {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(2000px)',
+          },
+          '60%': {
+            opacity: 1,
+            transform: 'translateY(-30px)',
+          },
+          '80%': {
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         'bg-animation': 'gradient-animation 2s ease infinite',
         'writer-bounce': 'writer-bounce 1.5s ease infinite',
         'fade-in-right': 'fade-in-right 2s ease infinite',
         'fade-in-down': 'fade-in-down 1s ease infinite',
+        'bounce-in-top': 'bounce-in-top 2s ease infinite',
       },
     },
   },

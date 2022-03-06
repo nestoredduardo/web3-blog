@@ -28,7 +28,7 @@ const WritersList: React.FC<PropsFromRedux> = ({
 
   if (writersList) {
     return (
-      <section className={`${bounce ? 'bounce-in-top' : ''} my-10`}>
+      <section className={`${bounce ? 'animate-bounce-in-top' : ''} my-10`}>
         <InfiniteScroll
           dataLength={writersList.length}
           next={handleNext}
