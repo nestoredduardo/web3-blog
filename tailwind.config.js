@@ -28,6 +28,31 @@ module.exports = {
           light: '#e2e8f0',
         },
       },
+      keyframes: {
+        textBounce: {
+          '0%': {
+            transform: 'translateY(0)',
+          },
+          '10%': {
+            transform: 'translateY(0)',
+          },
+          '30%': {
+            transform: 'translateY(-55px)',
+          },
+          '50%': {
+            transform: 'translateY(0)',
+          },
+          '58%': {
+            transform: 'translateY(-7px)',
+          },
+          '65%': {
+            transform: 'translateY(0)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
+      },
     },
   },
   plugins: [],

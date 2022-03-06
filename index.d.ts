@@ -48,6 +48,7 @@ type PostPreview = {
 type WritersState = {
   list: WriterPreview[]
   loading: boolean
+  firstLoading: boolean
   error: boolean
   total: number | null
   nextPage: number

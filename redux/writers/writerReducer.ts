@@ -3,6 +3,7 @@ import { Action, ActionType } from './writersTypes'
 const initialState: WritersState = {
   list: [],
   loading: false,
+  firstLoading: true,
   error: false,
   total: null,
   nextPage: 0,
@@ -21,6 +22,7 @@ const reducer = (
         ...state,
         list: state.list.concat(action.payload.data),
         loading: false,
+        firstLoading: false,
         total: action.payload.total,
         nextPage: state.nextPage + 1,
       }

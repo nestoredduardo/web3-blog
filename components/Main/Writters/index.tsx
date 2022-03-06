@@ -26,10 +26,6 @@ const WritersList: React.FC<PropsFromRedux> = ({
     }
   }
 
-  useEffect(() => {
-    getWriters()
-  }, [])
-
   if (writersList) {
     return (
       <section className={`${bounce ? 'bounce-in-top' : ''} my-10`}>
