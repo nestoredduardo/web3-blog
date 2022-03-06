@@ -38,7 +38,7 @@ const ProfilePage = ({ writer, postPreviewResponse }: WritersResponse) => {
   return (
     <>
       <Head>
-        <title>@{writer.firstName.toLowerCase()} | Web3Blogs </title>
+        <title>@{writer.firstName.toLowerCase()} | Web3Blocks </title>
         <link rel="icon" href="/img/logo.svg" />
       </Head>
 
