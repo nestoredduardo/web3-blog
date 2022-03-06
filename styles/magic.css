@@ -62,3 +62,24 @@
     transform: translateX(15px);
   }
 }
+
+/* Like Animation */
+.heart {
+  background-image: url('/icon/like.png');
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.heart-animation {
+  animation: heart-beat 0.8s steps(28) 1 forwards;
+}
+
+@keyframes heart-beat {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
