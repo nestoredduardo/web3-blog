@@ -16,21 +16,21 @@ const MoreInfo: React.FC<MoreInfoProps> = ({ total, postPreviewList }) => {
   return (
     <section className="hidden h-fit rounded-2xl border-2 border-gray-light bg-white py-7 px-5 md:flex md:flex-col">
       <div className="flex items-center gap-2">
-        <div className="relative h-4 w-4">
+        <div className="relative h-4 w-4 xl:h-6 xl:w-6">
           <Image src={postIcon} layout="fill" />
         </div>
-        <p>{total} post published</p>
+        <p className="text-lg">{total} post published</p>
       </div>
-      <div className="mt-3">
+      <div className="mt-3 xl:mt-5">
         <div className="flex items-center gap-2">
-          <div className="relative h-4 w-4">
+          <div className="relative h-4 w-4 xl:h-6 xl:w-6">
             <Image src={topicIcon} layout="fill" />
           </div>
-          <p>Topics</p>
+          <p className="text-lg">Topics</p>
         </div>
-        <ul className="mt-2 flex flex-wrap gap-2">
+        <ul className="mt-2 flex flex-wrap gap-2 xl:mt-3">
           {firstTen.map((tag) => (
-            <li className="rounded-lg bg-teal-100 p-1 text-xs text-teal-500">
+            <li className="rounded-lg bg-teal-100 p-1 text-xs text-teal-500 xl:text-sm">
               {tag}
             </li>
           ))}
