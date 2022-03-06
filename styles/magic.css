@@ -71,21 +71,6 @@
   }
 }
 
-/* Search Results: Fade In */
-.fade-in-down {
-  animation: fade-in-down 1s ease infinite;
-}
-@keyframes fade-in-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Writers list Bounce In */
 .bounce-in-top {
   animation: bounce-in-top 2s ease infinite;

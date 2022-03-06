@@ -23,7 +23,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
     <section
       className={
         'absolute z-10 mt-12 flex max-h-40 min-h-fit w-80 flex-col overflow-y-auto rounded-xl border-2 border-gray-light bg-white py-3 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:w-96 lg:max-h-80 lg:w-[450px] xl:w-[540px] ' +
-        (fade && 'fade-in-down')
+        (fade && 'animate-fade-in-down')
       }
     >
       {(loading || input.length <= 2) && <Loading />}

@@ -84,11 +84,22 @@ module.exports = {
             'background-position': '0% 50%',
           },
         },
+        'fade-in-down': {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(-20px)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         'bg-animation': 'gradient-animation 2s ease infinite',
         'writer-bounce': 'writer-bounce 1.5s ease infinite',
         'fade-in-right': 'fade-in-right 2s ease infinite',
+        'fade-in-down': 'fade-in-down 1s ease infinite',
       },
     },
   },
