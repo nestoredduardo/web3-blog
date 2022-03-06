@@ -98,3 +98,32 @@
     transform: translateX(0px);
   }
 }
+
+/* Search Results: Fade In and out Down */
+.fade-in-down {
+  animation: fade-in-down 1s ease infinite;
+}
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-out-up {
+  animation: fade-out-up 1s ease infinite;
+}
+@keyframes fade-out-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
