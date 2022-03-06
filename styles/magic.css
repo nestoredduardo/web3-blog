@@ -134,3 +134,11 @@
     transform: translateY(0);
   }
 }
+
+:root {
+  --toastify-color-progress-light: linear-gradient(
+    to right,
+    #ff52ff,
+    #ff8867
+  ) !important;
+}
