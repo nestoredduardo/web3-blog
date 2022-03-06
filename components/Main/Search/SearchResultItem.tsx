@@ -9,7 +9,7 @@ type WriterItemProps = {
 const WriterItem: React.FC<WriterItemProps> = ({ writer }) => {
   return (
     <Link href={`/${writer.id}`}>
-      <li className="flex cursor-pointer items-center border-b-2 border-gray-light py-4 px-6 hover:bg-gray-light">
+      <li className="flex cursor-pointer items-center py-4 px-6 hover:bg-gray-light">
         <div className="mr-4 h-11 w-11">
           <img src={writer.picture} className="rounded-full" />
         </div>

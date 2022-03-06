@@ -52,7 +52,7 @@ const Search: React.FC<PropsFromRedux> = ({
       <input
         type="text"
         placeholder="Search in Web3Block"
-        className="block w-80 rounded-2xl bg-background py-2 pl-14 pr-14 shadow-sm placeholder:italic placeholder:text-gray focus:border-sea focus:bg-white focus:outline-none focus:ring-1 focus:ring-sea sm:text-sm"
+        className="block w-80 rounded-2xl bg-background py-2 pl-14 pr-14 shadow-sm placeholder:italic placeholder:text-gray focus:border-sea focus:bg-white focus:outline-none focus:ring-1 focus:ring-sea sm:text-sm md:w-96 lg:w-[450px] xl:w-[540px] xl:py-3"
         value={input}
         onChange={handleChange}
       />

@@ -22,7 +22,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   return (
     <section
       className={
-        'absolute z-10 mt-12 flex h-40 w-80 flex-col overflow-y-auto rounded-xl border-2 border-gray-light bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] ' +
+        'absolute z-10 mt-12 flex max-h-40 min-h-fit w-80 flex-col overflow-y-auto rounded-xl border-2 border-gray-light bg-white py-3 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:w-96 lg:max-h-80 lg:w-[450px] xl:w-[540px] ' +
         (fade && 'fade-in-down')
       }
     >
@@ -32,7 +32,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
           return <SearchResultItem key={writer.id} writer={writer} />
         })}
       {!loading && input.length > 2 && results.length == 0 && (
-        <h3 className="mx-auto mt-6 text-gray">Not results found</h3>
+        <h3 className="mx-auto text-gray">Not results found</h3>
       )}
     </section>
   )
