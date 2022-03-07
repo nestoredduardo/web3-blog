@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Button from '@components/Button'
 import Connect2Phantom from '@components/Connect2Phantom'
 
 import logo from '@images/logo.svg'
@@ -19,7 +18,6 @@ const Header: React.FC = () => {
           </h1>
         </section>
       </Link>
-      {/* <Button styles="px-7 py-2">Connect Wallet</Button> */}
       <Connect2Phantom />
     </header>
   )
