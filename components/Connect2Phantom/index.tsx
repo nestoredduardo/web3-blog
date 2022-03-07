@@ -2,6 +2,9 @@ import { Connection, PublicKey, clusterApiUrl } from '@solana/web3.js'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 
+import Button from '@components/Button'
+import ConnectedOptions from './ConnectedOptions'
+
 type PhantomEvent = 'disconnect' | 'connect'
 
 interface ConnectOpts {
@@ -19,7 +22,7 @@ type WindowWithSolana = Window & {
   solana?: PhantomProvider
 }
 
-const connect2Phantom: React.FC = () => {
+const Connect2Phantom: React.FC = () => {
   const [walletExist, setWalletExist] = useState(false)
   const [provider, setProvider] = useState<PhantomProvider | null>(null)
   const [connected, setConnected] = useState(false)
@@ -52,7 +55,6 @@ const connect2Phantom: React.FC = () => {
       if (walletExist) {
         toast('Connecting Wallet')
         await provider?.connect()
-        console.log('Connected with: ' + publicKey?.toString())
       } else {
         toast('Get a Phantom Wallet to dive into web3 🦄')
       }
@@ -72,12 +74,19 @@ const connect2Phantom: React.FC = () => {
   }
 
   return (
-    <div>
-      {connected ? (
-        <button onClick={handleDisconnect}>Disconnect Wallet</button>
+    <div className="flex">
+      {connected && publicKey ? (
+        <ConnectedOptions
+          publicKey={publicKey!}
+          handleDisconnect={handleDisconnect}
+        />
       ) : (
-        <button onClick={handleConnect}>Connect Wallet</button>
+        <Button onClick={handleConnect} styles="my-auto">
+          Connect Wallet
+        </Button>
       )}
     </div>
   )
 }
+
+export default Connect2Phantom
