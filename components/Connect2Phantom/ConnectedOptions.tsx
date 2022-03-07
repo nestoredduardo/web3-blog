@@ -17,7 +17,7 @@ const ConnectedOptions: React.FC<ConnectedOptionsProps> = ({
 
   return (
     <div
-      className={`absolute top-[72.4px] right-0 w-48 rounded-lg border border-gray-light bg-white ${
+      className={`absolute top-[72.4px] right-0 w-48 rounded-lg border border-gray-light bg-white text-secondary-gray lg:w-56 lg:text-lg ${
         fade && 'animate-fade-in-down'
       }`}
     >
