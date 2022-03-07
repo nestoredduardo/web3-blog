@@ -21,7 +21,9 @@ const ConnectedOptions: React.FC<ConnectedOptionsProps> = ({
         fade && 'animate-fade-in-down'
       }`}
     >
-      <p className="cursor-pointer py-2 px-4 hover:bg-gray-light">Your NFTs</p>
+      <p className="cursor-pointer py-2 px-4 hover:animate-bg-animation hover:bg-gradient-to-r hover:from-sea hover:to-purple hover:bg-[length:200%_200%] hover:text-white hover:text-black">
+        Your NFTs
+      </p>
       <button
         className="flex w-full px-4 py-2 hover:bg-red-100"
         onClick={handleDisconnect}
