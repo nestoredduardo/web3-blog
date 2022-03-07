@@ -1,9 +1,9 @@
-import { Connection, PublicKey, clusterApiUrl } from '@solana/web3.js'
+import { PublicKey } from '@solana/web3.js'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 
 import Button from '@components/Button'
-import ConnectedOptions from './ConnectedOptions'
+import Connected from './Connected'
 
 type PhantomEvent = 'disconnect' | 'connect'
 
@@ -76,10 +76,7 @@ const Connect2Phantom: React.FC = () => {
   return (
     <div className="flex">
       {connected && publicKey ? (
-        <ConnectedOptions
-          publicKey={publicKey!}
-          handleDisconnect={handleDisconnect}
-        />
+        <Connected publicKey={publicKey!} handleDisconnect={handleDisconnect} />
       ) : (
         <Button onClick={handleConnect} styles="my-auto">
           Connect Wallet
