@@ -1,4 +1,3 @@
-// TODO: BUILD NAME
 const formatName = (title: string, firstName: string, lastName: string) => {
   const titleUppercase = title.charAt(0).toUpperCase() + title.slice(1)
 
@@ -33,4 +32,12 @@ const formatDate = (dateString: string, type: string) => {
   }
 }
 
-export { formatName, formatDate }
+const formatPublicKey = (publicKey: string) => {
+  return (
+    publicKey.slice(0, 2) +
+    '...' +
+    publicKey.slice(Math.max(publicKey.length - 5, 0))
+  )
+}
+
+export { formatName, formatDate, formatPublicKey }
