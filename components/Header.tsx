@@ -7,7 +7,7 @@ import logo from '@images/logo.svg'
 
 const Header: React.FC = () => {
   return (
-    <header className="flex h-[74px] justify-between border-b-2 border-gray-light px-3 md:px-8 xl:px-16">
+    <header className="flex h-[74px] justify-between border-b-2 border-gray-light px-3 md:px-8 xl:px-40">
       <Link href="/">
         <section className="flex cursor-pointer items-center gap-2">
           <div className="h-10 w-10">
