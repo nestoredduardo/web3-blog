@@ -60,3 +60,7 @@ type SearchState = {
   loading: boolean
   error: boolean
 }
+
+type UserState = {
+  publicAddress: string
+}
