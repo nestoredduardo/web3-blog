@@ -23,7 +23,7 @@ const ConnectedOptions: React.FC<ConnectedOptionsProps> = ({
         fade && 'animate-fade-in-down'
       }`}
     >
-      <Link href="/yourwallet">
+      <Link href="/yourNFTs">
         <p className="cursor-pointer py-2 px-4 hover:animate-bg-animation hover:bg-gradient-to-r hover:from-sea hover:to-purple hover:bg-[length:200%_200%] hover:text-white">
           Your NFTs
         </p>
