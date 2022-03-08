@@ -4,9 +4,11 @@ const PageLoader = () => {
   return (
     <div className="fixed flex min-h-screen min-w-full items-center justify-center bg-white">
       <div className="flex text-4xl font-bold text-secondary">
-        {COMPANY_NAME.split('').map((char) => {
+        {COMPANY_NAME.split('').map((char, index) => {
           return (
-            <div className="animate-[textBounce_1s_ease_infinite]">{char}</div>
+            <div key={index} className="animate-[textBounce_1s_ease_infinite]">
+              {char}
+            </div>
           )
         })}
       </div>
