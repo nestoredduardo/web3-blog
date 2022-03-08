@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+
 import LogoutIcon from './LogoutIcon'
 
 type ConnectedOptionsProps = {
@@ -21,9 +23,12 @@ const ConnectedOptions: React.FC<ConnectedOptionsProps> = ({
         fade && 'animate-fade-in-down'
       }`}
     >
-      <p className="cursor-pointer py-2 px-4 hover:animate-bg-animation hover:bg-gradient-to-r hover:from-sea hover:to-purple hover:bg-[length:200%_200%] hover:text-white">
-        Your NFTs
-      </p>
+      <Link href="/yourwallet">
+        <p className="cursor-pointer py-2 px-4 hover:animate-bg-animation hover:bg-gradient-to-r hover:from-sea hover:to-purple hover:bg-[length:200%_200%] hover:text-white">
+          Your NFTs
+        </p>
+      </Link>
+
       <button
         className="flex w-full px-4 py-2 hover:bg-red-100"
         onClick={handleDisconnect}
