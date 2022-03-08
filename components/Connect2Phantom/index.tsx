@@ -1,6 +1,10 @@
 import { PublicKey } from '@solana/web3.js'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+import {
+  resolveToWalletAddress,
+  getParsedNftAccountsByOwner,
+} from '@nfteyez/sol-rayz'
 
 import Button from '@components/Button'
 import Connected from './Connected'
@@ -35,6 +39,7 @@ const Connect2Phantom: React.FC = () => {
       setProvider(solana)
       setWalletExist(true)
     }
+    printNFTs()
   }, [])
 
   useEffect(() => {
@@ -48,11 +53,21 @@ const Connect2Phantom: React.FC = () => {
     })
   }, [provider])
 
+  const printNFTs = async (publicKey?: string) => {
+    const publicAddress = await resolveToWalletAddress({
+      text: '5nzdiuarE9246p8XpfAni3jZa4ZNRZaXdNFkijYpFvpB',
+    })
+    const nftArray = await getParsedNftAccountsByOwner({
+      publicAddress,
+    })
+    console.log(nftArray)
+  }
+
   const handleConnect: React.MouseEventHandler<
     HTMLButtonElement
   > = async () => {
     if (walletExist) {
-      toast.promise(provider?.connect()!, {
+      await toast.promise(provider?.connect()!, {
         pending: { render: 'Connecting Wallet', position: 'top-center' },
         success: {
           render: 'Wallet Connected!',
