@@ -51,15 +51,24 @@ const Connect2Phantom: React.FC = () => {
   const handleConnect: React.MouseEventHandler<
     HTMLButtonElement
   > = async () => {
-    try {
-      if (walletExist) {
-        toast('Connecting Wallet')
-        await provider?.connect()
-      } else {
-        toast('Get a Phantom Wallet to dive into web3 🦄')
-      }
-    } catch (error) {
-      toast('Error connecting Wallet :(')
+    if (walletExist) {
+      toast.promise(provider?.connect()!, {
+        pending: { render: 'Connecting Wallet', position: 'top-center' },
+        success: {
+          render: 'Wallet Connected!',
+          position: 'top-center',
+          autoClose: 1500,
+          type: 'default',
+          icon: '✅',
+        },
+        error: {
+          render: 'Error connecting Wallet :(',
+          position: 'top-center',
+          autoClose: 1500,
+        },
+      })
+    } else {
+      toast('Get a Phantom Wallet to dive into web3 🦄')
     }
   }
 
@@ -68,8 +77,15 @@ const Connect2Phantom: React.FC = () => {
   > = async () => {
     try {
       await provider?.disconnect()
+      toast('Wallet Disconnected!', {
+        icon: '👋',
+        position: 'top-center',
+        autoClose: 1500,
+      })
     } catch (error) {
-      toast('Error disconnecting Wallet :(')
+      toast.error('Error disconnecting Wallet :(. Please retry', {
+        autoClose: 1000,
+      })
     }
   }
 

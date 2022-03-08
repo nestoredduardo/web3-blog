@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <NextNProgress color="#00E1C9" options={{ showSpinner: false }} />
-      <ToastContainer />
+      <ToastContainer limit={2} />
       <Layout>
         <Component {...pageProps} />
       </Layout>
