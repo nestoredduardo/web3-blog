@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import YourWallet from '@components/YourWallet'
+import YourNFTs from '@components/YourNFTs'
 
-const YourNFTs: NextPage = () => {
+const YourNFTsPage: NextPage = () => {
   return (
     <>
       <Head>
@@ -11,9 +11,9 @@ const YourNFTs: NextPage = () => {
         <link rel="icon" href="/img/logo.svg" />
       </Head>
 
-      <YourWallet />
+      <YourNFTs />
     </>
   )
 }
 
-export default YourNFTs
+export default YourNFTsPage
