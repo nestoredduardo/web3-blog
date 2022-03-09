@@ -5,9 +5,12 @@ import {
   resolveToWalletAddress,
   getParsedNftAccountsByOwner,
 } from '@nfteyez/sol-rayz'
+import { connect, ConnectedProps } from 'react-redux'
 
 import Button from '@components/Button'
 import Connected from './Connected'
+
+import { setPublicAddress } from '@userActions'
 
 type PhantomEvent = 'disconnect' | 'connect'
 
@@ -26,7 +29,7 @@ type WindowWithSolana = Window & {
   solana?: PhantomProvider
 }
 
-const Connect2Phantom: React.FC = () => {
+const Connect2Phantom: React.FC<PropsFromRedux> = ({ setPublicAddress }) => {
   const [walletExist, setWalletExist] = useState(false)
   const [provider, setProvider] = useState<PhantomProvider | null>(null)
   const [connected, setConnected] = useState(false)
@@ -46,6 +49,7 @@ const Connect2Phantom: React.FC = () => {
     provider?.on('connect', (publicKey: PublicKey) => {
       setConnected(true)
       setPublicKey(publicKey)
+      setPublicAddress(publicKey.toString())
     })
     provider?.on('disconnect', () => {
       setConnected(false)
@@ -117,4 +121,11 @@ const Connect2Phantom: React.FC = () => {
   )
 }
 
-export default Connect2Phantom
+const mapDispatchToProps = {
+  setPublicAddress,
+}
+
+const connector = connect(null, mapDispatchToProps)
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+export default connector(Connect2Phantom)
