@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { formatName, formatDate } from '@utils'
+import { formatName, formatDate } from '@utils/formatData'
 
 type BlogHeaderProps = {
   title: string

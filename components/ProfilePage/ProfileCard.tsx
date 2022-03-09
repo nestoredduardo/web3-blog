@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 
 import Button from '@components/Button'
 
-import { formatName, formatDate } from '@utils'
+import { formatName, formatDate } from '@utils/formatData'
 
 type ProfileCardProps = {
   writer: Writer

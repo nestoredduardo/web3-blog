@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { getWriter, getPost } from '../utils'
+import { getWriter, getPost } from '@utils/fetchWriters'
 
 const handleWriterId = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

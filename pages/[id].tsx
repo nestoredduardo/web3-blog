@@ -2,7 +2,7 @@ import Profile from '@components/ProfilePage'
 import type { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
-import { getAllWriters, getWriter, getPost } from './api/utils'
+import { getAllWriters, getWriter, getPost } from '@utils/fetchWriters'
 
 type WritersResponse = {
   writer: Writer

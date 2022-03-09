@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { getAllWriters } from '../utils'
+import { getAllWriters } from '@utils/fetchWriters'
 
 const handleSearch = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

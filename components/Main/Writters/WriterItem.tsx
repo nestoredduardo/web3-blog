@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { formatName } from '@utils'
+import { formatName } from '@utils/formatData'
 
 type WriterItemProps = {
   writer: WriterPreview

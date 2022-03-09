@@ -23,7 +23,7 @@
       "@writersActions": ["redux/writers/writersActions.ts"],
       "@searchActions": ["redux/search/searchActions.ts"],
       "@userActions": ["redux/user/userActions.ts"],
-      "@utils": ["utils/index.ts"]
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
