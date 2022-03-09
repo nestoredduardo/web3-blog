@@ -4,10 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 import writerReducer from './writers/writerReducer'
 import searchReducer from './search/searchReducer'
+import userReducer from './user/userReducer'
 
 const rootReducer = combineReducers({
   writers: writerReducer,
   search: searchReducer,
+  user: userReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
