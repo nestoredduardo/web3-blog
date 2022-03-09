@@ -2,7 +2,7 @@ import { PublicKey } from '@solana/web3.js'
 import Image from 'next/image'
 import { useState } from 'react'
 
-import { formatPublicKey } from '@utils'
+import { formatPublicKey } from '@utils/formatData'
 
 import walletIcon from '@icons/wallet.svg'
 import downArrowIcon from '@icons/down-arrow.svg'
