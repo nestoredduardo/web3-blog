@@ -10,7 +10,7 @@ import { connect, ConnectedProps } from 'react-redux'
 import Button from '@components/Button'
 import Connected from './Connected'
 
-import { setPublicAddress } from '@userActions'
+import { setPublicAddress, removePublicAddress } from '@userActions'
 
 type PhantomEvent = 'disconnect' | 'connect'
 
@@ -54,6 +54,7 @@ const Connect2Phantom: React.FC<PropsFromRedux> = ({ setPublicAddress }) => {
     provider?.on('disconnect', () => {
       setConnected(false)
       setPublicKey(null)
+      removePublicAddress()
     })
   }, [provider])
 
