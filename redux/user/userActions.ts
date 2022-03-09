@@ -15,4 +15,12 @@ const removePublicAddress = () => (dispatch: Dispatch<Action>) => {
   })
 }
 
-export { setPublicAddress, removePublicAddress }
+const getNFTsfromPublicAddress = () => async () => {
+  const publicAddress = '9BBLZWSdZSGUs5TwiYKN21rxEVHnbQ4H1YP3qF9iBNus'
+  const response = await fetch(`/api/user/nfts/${publicAddress}`)
+  const data = await response.json()
+
+  console.log(data)
+}
+
+export { setPublicAddress, removePublicAddress, getNFTsfromPublicAddress }
