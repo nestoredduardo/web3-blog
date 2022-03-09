@@ -45,6 +45,20 @@ type PostPreview = {
   owner: WriterPreview
 }
 
+type NFTAtribute = {
+  display_type?: string
+  trait_type: string
+  value: string
+}
+
+type NFTmetadata = {
+  description: string
+  external_url: string
+  image: string
+  name: string
+  attributes: NFTAtribute[]
+}
+
 type WritersState = {
   list: WriterPreview[]
   loading: boolean
