@@ -1,5 +1,6 @@
 import { Dispatch } from 'redux'
 import { ActionType, Action } from './userTypes'
+import { RootState } from 'redux/store'
 
 const setPublicAddress =
   (publicAddress: string) => (dispatch: Dispatch<Action>) => {
@@ -16,11 +17,12 @@ const removePublicAddress = () => (dispatch: Dispatch<Action>) => {
 }
 
 const getNFTsfromPublicAddress =
-  (publicAddress: string) => async (dispatch: Dispatch<Action>) => {
+  () => async (dispatch: Dispatch<Action>, getState: () => RootState) => {
     dispatch({
       type: ActionType.GET_USER_NFTS,
     })
     try {
+      const { publicAddress } = getState().user
       const response = await fetch(`/api/user/nfts/${publicAddress}`)
       const data: NFTmetadata[] = await response.json()
 
