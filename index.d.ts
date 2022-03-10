@@ -77,4 +77,7 @@ type SearchState = {
 
 type UserState = {
   publicAddress: string
+  loadingNFTs: boolean
+  NFTList: NFTmetadata[]
+  errorNFTS: boolean
 }
