@@ -11,14 +11,16 @@ const YourWallet: React.FC<PropsFromRedux> = ({ publicAddress }) => {
     router.push('/')
   } else {
     return (
-      <main>
-        <h1>Watch your NFTs</h1>
+      <main className="px-3 md:px-8 xl:px-40">
+        <h1 className="mt-6 mb-4 text-center text-3xl font-semibold">
+          Watch your NFTs
+        </h1>
         <NFTList />
       </main>
     )
   }
 
-  return <h1>Returning to HomePage</h1>
+  return <h1>Returning to HomePage...</h1>
 }
 
 const mapStateToProps = (state: RootState) => {
