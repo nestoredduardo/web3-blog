@@ -15,4 +15,22 @@ interface disconnectAction {
   type: ActionType.DISCONNECT_WALLET
 }
 
-export type Action = connectAction | disconnectAction
+interface getNFTsAction {
+  type: ActionType.GET_USER_NFTS
+}
+
+interface getUserNFTsSuccess {
+  type: ActionType.GET_USER_NFTS_SUCCESS
+  payload: NFTmetadata[]
+}
+
+interface getUserNFTsError {
+  type: ActionType.GET_USER_NFTS_ERROR
+}
+
+export type Action =
+  | connectAction
+  | disconnectAction
+  | getNFTsAction
+  | getUserNFTsSuccess
+  | getUserNFTsError
