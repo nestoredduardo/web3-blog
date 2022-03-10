@@ -15,12 +15,24 @@ const removePublicAddress = () => (dispatch: Dispatch<Action>) => {
   })
 }
 
-const getNFTsfromPublicAddress = () => async () => {
-  const publicAddress = '9BBLZWSdZSGUs5TwiYKN21rxEVHnbQ4H1YP3qF9iBNus'
-  const response = await fetch(`/api/user/nfts/${publicAddress}`)
-  const data = await response.json()
+const getNFTsfromPublicAddress =
+  (publicAddress: string) => async (dispatch: Dispatch<Action>) => {
+    dispatch({
+      type: ActionType.GET_USER_NFTS,
+    })
+    try {
+      const response = await fetch(`/api/user/nfts/${publicAddress}`)
+      const data: NFTmetadata[] = await response.json()
 
-  console.log(data)
-}
+      dispatch({
+        type: ActionType.GET_USER_NFTS_SUCCESS,
+        payload: data,
+      })
+    } catch (error) {
+      dispatch({
+        type: ActionType.GET_USER_NFTS_ERROR,
+      })
+    }
+  }
 
 export { setPublicAddress, removePublicAddress, getNFTsfromPublicAddress }
