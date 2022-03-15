@@ -19,7 +19,7 @@ const NFTList: React.FC<PropsFromRedux> = ({
   }
 
   return (
-    <section className="flex justify-center">
+    <section className="flex flex-wrap justify-center gap-3">
       {NFTList &&
         NFTList.map((NFT, id) => {
           return (

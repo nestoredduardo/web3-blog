@@ -6,7 +6,7 @@ import NFTList from './NFTList'
 
 const YourWallet: React.FC<PropsFromRedux> = ({ publicAddress }) => {
   return (
-    <main className="px-3 md:px-8 xl:px-40">
+    <main className="mb-4 px-3 md:px-8 xl:px-40">
       <h1 className="mt-6 mb-4 text-center text-3xl font-semibold">
         Watch your NFTs
       </h1>
