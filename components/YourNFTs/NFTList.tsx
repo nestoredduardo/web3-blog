@@ -15,27 +15,28 @@ const NFTList: React.FC<PropsFromRedux> = ({
   }, [])
 
   if (loadingNFTs) {
-    return <h1>Loading NFT..</h1>
+    return <h1>Loading NFTs...</h1>
   }
 
   return (
     <section className="flex justify-center">
-      {NFTList.map((NFT, id) => {
-        return (
-          <article
-            key={id}
-            className="w-80 animate-bg-animation rounded-lg bg-gradient-to-r from-purple via-sea to-secondary bg-[length:200%_200%] p-2"
-          >
-            <div className="rounded-lg bg-black">
-              <img src={NFT.image} alt={NFT.name} className="rounded-t-lg" />
-              <div className="p-3">
-                <p className="text-xl font-semibold text-white">{NFT.name}</p>
-                <p className="text-gray-200">{NFT.description}</p>
+      {NFTList &&
+        NFTList.map((NFT, id) => {
+          return (
+            <article
+              key={id}
+              className="w-80 animate-bg-animation rounded-lg bg-gradient-to-r from-purple via-sea to-secondary bg-[length:200%_200%] p-2"
+            >
+              <div className="rounded-lg bg-black">
+                <img src={NFT.image} alt={NFT.name} className="rounded-t-lg" />
+                <div className="p-3">
+                  <p className="text-xl font-semibold text-white">{NFT.name}</p>
+                  <p className="text-gray-200">{NFT.description}</p>
+                </div>
               </div>
-            </div>
-          </article>
-        )
-      })}
+            </article>
+          )
+        })}
     </section>
   )
 }

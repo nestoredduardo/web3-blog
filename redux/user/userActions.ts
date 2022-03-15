@@ -26,6 +26,8 @@ const getNFTsfromPublicAddress =
       const response = await fetch(`/api/user/nfts/${publicAddress}`)
       const data: NFTmetadata[] = await response.json()
 
+      console.log(data)
+
       dispatch({
         type: ActionType.GET_USER_NFTS_SUCCESS,
         payload: data,

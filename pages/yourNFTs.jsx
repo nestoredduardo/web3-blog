@@ -1,9 +1,8 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import YourNFTs from '@components/YourNFTs'
 
-const YourNFTsPage: NextPage = () => {
+const YourNFTsPage = () => {
   return (
     <>
       <Head>
