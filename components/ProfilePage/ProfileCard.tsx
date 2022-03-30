@@ -44,7 +44,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ writer }) => {
       </ul>
       <Button
         styles="flex items-center px-7 py-3 text-lg"
-        onClick={() => toast('Comming Soon...Litle Rockstar 🦄')}
+        onClick={() => toast('Coming Soon...Little Rockstar 🦄')}
       >
         <div className="relative mr-2 h-5 w-5 xl:h-6 xl:w-6">
           <Image src="/icon/tip.svg" layout="fill" className="rounded-full" />
